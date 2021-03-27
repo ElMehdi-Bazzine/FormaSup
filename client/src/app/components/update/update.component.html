@@ -1,0 +1,38 @@
+<div style="display: flex;flex-direction: column; justify-content: center;align-items: center;margin-top: 10%;border: 2px solid black;">
+
+  <h3>Modifier Votre Compte:</h3>
+  <div [hidden]="submitted" style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
+
+      
+        <mat-form-field style="width: 100%;">
+          <mat-label>Prenom</mat-label>
+          <input  matInput [(ngModel)]="user.prenom" type="text"  id="idprenom"  required placeholder="Prénom" name="firstName"/>
+        </mat-form-field>
+      
+        <mat-form-field style="width: 100%;">
+          <mat-label>Nom</mat-label>
+          <input  matInput [(ngModel)]="user.nom" type="text"  id="idnom"  required placeholder="Nom" name="lastName"/>
+        </mat-form-field>
+
+        <mat-form-field style="width: 100%;">
+          <mat-label>Email</mat-label>
+          <input  matInput [(ngModel)]="user.email" type="email"  id="idemail"  required placeholder="Email" name="emailId"/>
+        </mat-form-field>
+
+        <mat-form-field style="width: 100%;">
+          <mat-label>Téléphone</mat-label>
+          <input  matInput [(ngModel)]="user.tel" type="text"  id="idtel"  required placeholder="Téléphone" name="tel"/>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary"  type="submit">
+          <i class="material-icons">
+            save
+          </i>
+          Enregistrer
+        </button>
+        <br>
+        <br>
+    </form>
+  </div>
+</div>

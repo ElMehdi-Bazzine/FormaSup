@@ -1,0 +1,107 @@
+<div id="register">
+  <div style="margin-top: 3%;">
+    <div class="signup-form">
+      <div class="mt-md-4">
+        <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+          <div class="form-header">
+            <h2>S'inscrire</h2>
+            <p>Veuillez remplir ce formulaire pour mieux s'informer</p>
+          </div>
+          <div class="form-group">
+            <label for="username">Nom Utilisateur</label>
+            <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required minlength="3"
+              maxlength="20" #username="ngModel" />
+          </div>
+
+          <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+            <div *ngIf="username.errors.required">Nom utilisateur est un champ obligatoire</div>
+            <div *ngIf="username.errors.minlength">
+              Nom utilisateur doit avoir au minimum 3 caractères
+            </div>
+            <div *ngIf="username.errors.maxlength">
+              Nom utilisateur ne doit pas dépasser 20 caractères
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" class="form-control" name="prenom" [(ngModel)]="form.prenom" required minlength="3"
+              maxlength="20" #prenom="ngModel" />
+          </div>
+          <div class="alert-danger" *ngIf="f.submitted && prenom.invalid">
+            <div *ngIf="prenom.errors.required">prenom est un champ obligatoire</div>
+            <div *ngIf="prenom.errors.minlength">
+              prenom doit avoir au minimum 3 caractères
+            </div>
+            <div *ngIf="prenom.errors.maxlength">
+              prenom ne doit pas dépasser 20 caractères
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dateNaissance">Date de naissance</label>
+            <input type="date" class="form-control" name="dateNaissance" [(ngModel)]="form.dateNaissance"  #dateNaissance="ngModel" />
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" class="form-control" name="nom" [(ngModel)]="form.nom" required minlength="3"
+              maxlength="20" #nom="ngModel" />
+            <div class="alert-danger" *ngIf="f.submitted && nom.invalid">
+              <div *ngIf="nom.errors.required">nom est un champ obligatoire</div>
+              <div *ngIf="nom.errors.minlength">
+                nom doit avoir au minimum 3 caractères
+              </div>
+              <div *ngIf="nom.errors.maxlength">
+                nom ne doit pas dépasser 20 caractères
+              </div>
+            </div>
+          </div>
+         
+         
+          <div class="form-group">
+            <label for="email">Email </label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email
+              #email="ngModel" />
+            <div class="alert-danger" *ngIf="f.submitted && email.invalid">
+              <div *ngIf="email.errors.required">Email est un champ obligatoire</div>
+              <div *ngIf="email.errors.email">
+                Email doit avoir une adresse mail valide
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="tel">Numero de téléphone</label>
+            <input type="number" class="form-control" name="tel" [(ngModel)]="form.tel" #tel="ngModel" />
+          </div>
+          <div class="form-group">
+            <label for="password">Mot de Passe</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required
+              minlength="6" #password="ngModel" />
+            <div class="alert-danger" *ngIf="f.submitted && password.invalid">
+              <div *ngIf="password.errors.required">mot de passe est un champ obligatoire</div>
+              <div *ngIf="password.errors.minlength">
+                Mot de passe doit avoir au minimum 6 caractères
+              </div>
+            </div>
+          </div>
+          
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block btn-lg">S'enregistrer</button>
+
+          </div>
+          <div class="text-center small">
+            <div style="color: rgb(20, 20, 20)"> Vous avez un compte? </div><a href="/login">
+              <div style="color: rgb(172, 94, 91)">Se Connecter</div>
+            </a>
+          </div>
+          <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+            L'inscription a échoué!<br />{{ errorMessage }}
+          </div>
+        </form>
+        <div class="alert alert-success" *ngIf="isSuccessful">
+          Votre inscription est réussie!
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

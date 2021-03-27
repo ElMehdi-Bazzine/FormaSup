@@ -1,0 +1,39 @@
+<div  style="margin-top: 8%;">
+<div class="panel panel-primary">
+  <div class="panel-heading">
+   <h1 style='text-align: center' >Listes des Utilisateurs</h1>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nom d'Utilisateur</th>
+          <th>Prenom</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Date de naissance</th>
+          <th>Numéro de tel </th>
+          <th>Action</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users ;let i = index">
+          <td>{{user.username}}</td>
+          <td>{{user.prenom}} </td>
+          <td>{{user.nom}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.dateNaissance}}</td>
+          <td>{{user.tel}}</td>
+          <td><button *ngIf="!isAdmin[i]" (click)="deleteUser(user.user_id)" class="btn btn-danger">Delete</button>
+              <button (click)="userDetails(user.user_id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+

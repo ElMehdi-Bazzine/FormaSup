@@ -1,0 +1,89 @@
+<div id= "resultat">
+    <br><br><br><br><br><br>
+    <div *ngIf="mst" >
+        <div *ngIf="mst.error">
+            <div class="intro-container wow fadeIn" >
+                <h1 id="error"class="mb-4 pb-0"> {{mst.error}}<i class="fa fa-exclamation" aria-hidden="true"></i></h1> <img src="https://www.techilife.com/wp-content/uploads/2021/01/VPN-Error-807-680x350.png">
+            </div> 
+        </div>
+        <div class="container" *ngIf="mst.data">
+            
+            <input id="filterInput" type="text" placeholder="Filtrer par une ville" name="villeMst" [(ngModel)]='villeMst' ><br>
+            <button id="btn_rechercheFilter" (click)="filterMst()">Filtrer <i class="fa fa-filter" aria-hidden="true"></i></button> <br> <br>
+            <div *ngIf="listFiltred" >
+                <div class="article"  *ngFor="let f of listFiltred.data;let i =index;let i2=index">
+                    
+                    <div  > 
+                        <div *ngIf="pariTest(i2)" class="divRight row">
+                            <article  [id]="i2" >
+                                <div>
+                                    <br><h4  id ="nom">  {{f.domaine}}  </h4>
+                                </div>  
+                                <div class="container">
+                                    <div id="formation">
+                                        {{f.formation}} <br> <br>
+                                    </div >
+                                    <div >
+                                        {{f.etablissement}}
+                                    </div >
+                                    <div id="ville">
+                                        {{f.ville}} <br><br>
+                                    </div>
+                                </div>  
+                                <div  *ngIf="this.plus[i]">
+                                    <div>
+                                        <p id="adresse">Adresse :  {{f.adresse}} </p>
+                                    </div>
+                                    <div>
+                                        <p id="modalité"> Modalité : {{f.modalite}}</p>
+                                    </div>
+                                    <div>
+                                        <p id="candidature"> Candidature : {{f.candidature}} </p>
+                                    </div>
+                                    <p>Site : <a id="site"> {{f.site}}</a></p>
+                                    <button id="btn" (click)="hideDiv(i)" >Savoir Moins</button>
+                                </div>
+                                <button id="btn" *ngIf="!this.plus[i]" (click)="showDiv(i)">Savoir Plus</button>
+                            </article>
+                        </div>
+                        <div  *ngIf="!pariTest(i2)" class="divLeft row">
+                            <article [id]="i2" >
+                                <div>
+                                    <br><h4  id ="nom">  {{f.domaine}}  </h4>
+                                </div>  
+                                <div class="container">
+                                    <div id="formation">
+                                        {{f.formation}} <br> <br>
+                                    </div >
+                                    <div >
+                                        {{f.etablissement}}
+                                    </div >
+                                    <div id="ville">
+                                        {{f.ville}} <br><br>
+                                    </div>
+                                </div>  
+                                <div  *ngIf="this.plus[i]">
+                                    <div>
+                                        <p id="adresse">Adresse :  {{f.adresse}} </p>
+                                    </div>
+                                    <div>
+                                        <p id="modalité"> Modalité : {{f.modalite}}</p>
+                                    </div>
+                                    <div>
+                                        <p id="candidature"> Candidature : {{f.candidature}} </p>
+                                    </div>
+                                    <p>Site : <a id="site"> {{f.site}}</a></p>
+                                    <button id="btn" (click)="hideDiv(i)" >Savoir Moins</button>
+                                </div>
+                                <button id="btn" *ngIf="!this.plus[i]" (click)="showDiv(i)">Savoir Plus</button>
+                            </article>
+                        </div>
+                
+                    </div>
+                
+                </div>
+            </div>
+        <div> 
+    </div>
+
+</div>

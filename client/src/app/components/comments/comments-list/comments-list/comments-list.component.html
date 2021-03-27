@@ -1,0 +1,18 @@
+  
+<h5>Les Commentaires:</h5>
+<hr>
+<li *ngFor="let comment of comments;let i = index" class="media mb-4">
+    <img class="d-flex mr-3 rounded-circle" src="assets/img/user.png"   alt="">
+    <div class="media-body">
+        <div class="float-right">
+            <small class="text-muted">{{ comment.dateTimeOfComment }}</small>
+        </div>
+        <div class="row ml-0"><h5 class="mt-0">{{ comment.user.username }}</h5>
+        </div>
+        {{ comment.content }}
+        <div class="float-right" *ngIf=isMine[i]||isAdmin>
+            <button  mat-raised-button color="warn" aria-pressed="false" class="btn btn-danger" (click)="onDeleteComment(comment.id)" >Supprimer 
+            </button>
+        </div>
+    </div>
+</li>

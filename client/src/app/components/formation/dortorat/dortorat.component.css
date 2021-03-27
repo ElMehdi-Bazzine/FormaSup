@@ -1,0 +1,91 @@
+#nom{
+    background-color: rgb(223, 27, 38);
+    color: white; 
+    text-align: center;
+    border-radius: 10px;
+ }
+ 
+ #formation{
+    text-align: center; 
+ }
+ #site{
+    color:blue;
+    text-decoration:underline;      
+  }
+  .mondisp{
+    display: none;
+  }
+  #btn{
+      outline: 0px;
+     color: white;
+     background-color: rgba(0, 174, 255, 0.644);
+     cursor: pointer;
+     border-radius: 10px;
+     border: none;
+    
+   
+    text-align: center;
+  }
+ #filterInput{
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid grey;
+    float: left;
+    width: 30%;
+    border-radius: 20px;
+    text-align: center;
+    margin-left: 35%;
+    outline: none;
+    background-color: #eef7f2;
+         
+  }
+  #btn_rechercheFilter{
+       float: left;
+    font-size: 20px;
+     width: 20%;
+     padding: 0px;
+     outline: 0px;
+     color: white;
+     margin-top: 10px;
+     cursor: pointer;
+     margin-left: 40%;
+     border: solid 2px #8dcca9;
+     border-radius: 10px;
+    border: none;
+    background-color: rgb(223, 27, 38);
+ }
+ article{
+    border:  solid 1px grey;
+    width: 500px;
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 5px;
+    display :block;
+    }
+ .article{
+    display: block;
+    text-align: center;
+ }
+ 
+ #error{
+   margin-top: 10px;
+    text-align: center;
+ }
+ img{
+   padding-left:28%
+}
+ 
+ .divRight{
+    float: right;
+    margin-left: 5px;
+    }
+ .divLeft{
+     float: left;
+     margin-right: 5px;
+  }
+ #resultat{
+     height: 100%;
+     z-index: 0;
+
+     
+  }

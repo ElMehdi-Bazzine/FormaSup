@@ -1,0 +1,92 @@
+<div id="resultat">
+    <br><br><br> <br><br><br>
+    <div *ngIf="doct" >
+        
+        <div *ngIf="doct.error">
+                    <div class="intro-container wow fadeIn" >
+                        <h1 id="error"class="mb-4 pb-0"> {{doct.error}}<i class="fa fa-exclamation" aria-hidden="true"></i></h1> <img src="https://www.techilife.com/wp-content/uploads/2021/01/VPN-Error-807-680x350.png">
+                    </div> 
+        </div>
+        <div  class="container" *ngIf="doct.data" >
+            <input id="filterInput" type="text" placeholder="Filtrer par une ville" name="villeDoct" [(ngModel)]='villeDoct' ><br>
+            <button id="btn_rechercheFilter" (click)="filterDoct()">Filtrer <i class="fa fa-filter" aria-hidden="true"></i></button> <br> <br>
+            <div *ngIf="listFiltred" >
+                <div class="article"  *ngFor="let f of listFiltred.data;let i =index;let i2=index">
+                    <div> 
+                        <div *ngIf="pariTest(i2)" class="divRight row">
+                            <article  [id]="i2" >
+                                <div>
+                                    <br><h4  id ="nom">  {{f.domaine}}  </h4>
+                                </div>  
+                                <div class="container">
+                                    
+                                    <div >
+                                        {{f.ecole}} <br><br>
+                                    </div >
+                                    <div id="ville">
+                                        <p>Ville :  {{f.ville}} <br><br></p>
+                                    </div>
+                                </div>  
+                                <div  *ngIf="this.plus[i]">
+                                    <div>
+                                        <p id="adresse">Région :  {{f.region}} </p>
+                                    </div>
+                                    <div>
+                                        <p id="adresse">Etablissement-Support :  {{f.etablissement_support}} </p>
+                                    </div>
+                                    <div>
+                                        <p id="modalité"> E-mail : {{f.email}}</p>
+                                    </div>
+                                    <div>
+                                        <p id="candidature"> Adresse postale : {{f.adresse_post}} </p>
+                                    </div>
+                                    <p>Site : <a id="site"> {{f.site}}</a></p>
+                                    <button id="btn" (click)="hideDiv(i)" >Savoir Moins</button>
+                                </div>
+                                <button id="btn" *ngIf="!this.plus[i]" (click)="showDiv(i)">Savoir Plus</button>
+                            </article>
+                            <br>
+                        </div>
+                        <div  *ngIf="!pariTest(i2)" class="divLeft row">
+                            <article [id]="i2" >
+                                <div>
+                                    <br><h4  id ="nom">  {{f.domaine}}  </h4>
+                                </div>  
+                                <div class="container">
+                                    
+                                    <div >
+                                        {{f.ecole}} <br><br>
+                                    </div >
+                                    <div id="ville">
+                                        <p>Ville :  {{f.ville}} <br><br></p>
+                                    </div>
+                                </div>  
+                                <button id="btn" *ngIf="!this.plus[i]" (click)="showDiv(i)">Savoir Plus</button>
+                                <div  *ngIf="this.plus[i]">
+                                    <div>
+                                        <p id="adresse">Région :  {{f.region}} </p>
+                                    </div>
+                                    <div>
+                                        <p id="adresse">Etablissement-Support :  {{f.etablissement_support}} </p>
+                                    </div>
+                                    <div>
+                                        <p id="modalité"> E-mail : {{f.email}}</p>
+                                    </div>
+                                    <div>
+                                        <p id="candidature"> Adresse postale : {{f.adresse_post}} </p>
+                                    </div>
+                                    <p>Site : <a id="site"> {{f.site}}</a></p>
+                                    <button id="btn" (click)="hideDiv(i)" >Savoir Moins</button>
+                                </div>
+                            
+                            </article>
+                            <br>
+                        </div>
+                
+                    </div>
+                
+                </div>
+            </div>
+        <div> 
+    </div>  
+</div>

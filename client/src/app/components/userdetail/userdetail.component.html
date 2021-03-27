@@ -1,0 +1,32 @@
+<<div class="container">
+    <div  style="margin-top: 8%;">
+      <div class="panel panel-primary">
+    <h2 style='text-align: center'>{{user.username}} :</h2> 
+    
+    <hr/>
+    <div *ngIf="user">
+      <div>
+        <label><b>Nom: </b></label> {{user.nom}}
+      </div>
+      <div>
+        <label><b>Prenom: </b></label> {{user.prenom}}
+      </div>
+      <div>
+        <label><b>Date de naissance: </b></label> {{user.dateNaissance}}
+      </div>  
+      <div>
+        <label><b>Email: </b></label> {{user.email}}
+      </div> 
+      <div>
+        <label><b>Tel: </b></label> {{user.tel}}
+      </div>
+        
+    </div>
+    
+    <br>
+    <br>
+    <button (click)="list()" class="btn btn-primary">Retourner</button><br>
+    </div>
+    </div>
+    </div>
+    

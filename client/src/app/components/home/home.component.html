@@ -1,0 +1,109 @@
+
+
+<!--==========================
+  Intro Section
+============================-->
+<section id="intro">
+  <div class="intro-container wow fadeIn">
+    <h1 class="mb-4 pb-0">TROUVEZ VOTRE<br><br><span>FORMATION</span> EN FRANCE</h1>
+    <input id="RechercheFormation"  placeholder="Domaine/Filiere/Formation...." type="text" name="formation" [(ngModel)]='formation'> <br>
+    <select  id="Niveau"  name="niveau" [(ngModel)]='niveau' >
+      <option value="" disabled selected >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niveau d'études</option>
+      <option  value="licence">Bac+2</option>
+      <option value="licence">Bac+3</option>
+      <option value="master">Bac+4</option>
+      <option value="master">Bac+5</option>
+      <option value="doctorat">Bac+8</option>
+    </select> <br>
+    <button id ="btn_RechercheFormation" (click)="getformation()" type="submit">Rechercher <i class="fa fa-search" aria-hidden="true"></i> </button>
+  </div>
+</section>
+ 
+  <!--<main id="main">
+==========================
+  about Section
+============================-->
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2> À propos</h2>
+        <p> FormaSup facilitera la recherche et l’affichage des informations sur toutes les formations en France et également la mise en contact entre les utilisateurs.</p>
+      </div>
+      
+    </div>
+  </div> 
+</section>
+
+  <!-- ==========================
+    Speakers Section
+  ============================-->
+  <!-- <section id="sports" class="wow fadeInUp">
+    <div class="container">
+      <div class="section-header">
+        <h2><br />Sports</h2>
+        <p>Here are some of our kind of sports</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="speaker">
+            <img src="assets/img/speakers/1.jpg" alt="Speaker 1" class="img-fluid">
+            <div class="details">
+              <h3 style='text-align: center' >Football</h3>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="speaker">
+            <img src="assets/img/speakers/2.jpg" alt="Speaker 1" class="img-fluid">
+            <div class="details">
+              <h3 style='text-align: center'>Basketball</h3>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="speaker">
+            <img src="assets/img/speakers/3.jpg" alt="Speaker 3" class="img-fluid">
+            <div class="details">
+              <h3 style='text-align: center'>Running</h3>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="speaker">
+            <img src="assets/img/speakers/4.jpg" alt="Speaker 4" class="img-fluid">
+            <div class="details">
+              <h3 style='text-align: center'>Tennis</h3>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="speaker">
+            <img src="assets/img/speakers/5.jpg" alt="Speaker 5" class="img-fluid">
+            <div class="details">
+              <h3 style='text-align: center'>Handball</h3>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="speaker">
+            <img src="assets/img/speakers/6.jpg" alt="Speaker 6" class="img-fluid">
+            <div class="details">
+              <h3 style='text-align: center'>Crossfit</h3>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  
+</main> -->

@@ -1,0 +1,23 @@
+<header id="header">
+    <div class="container">
+  
+      <div id="logo" class="pull-left">
+        <a href="#intro" class="scrollto"><img src="assets/img/logo.png" alt="" title=""><strong>FormaSup</strong></a>
+      </div>
+  
+      <nav id="nav-menu-container" class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <ul class="nav-menu">
+          <li ><a href="#intro">Accueil</a></li>  
+          <li *ngIf="isLoggedIn"><a href="/postslist" >Q-R</a></li>
+          <li *ngIf="isLoggedIn" ><a href="/posts" >Question?</a></li>
+          <li *ngIf="isLoggedIn" ><a href="/profile" >Profil</a></li>
+
+          <li *ngIf="!showAdminBoard"><a href="#about">À propos</a></li>
+  
+          <li *ngIf="showAdminBoard"><a href="/allusers" >Utilisateurs</a></li>
+          <li class="buy-tickets" *ngIf="!isLoggedIn"><a href="/register">Se Connecter / S'inscrire</a></li>
+          <li  class="buy-tickets" *ngIf="isLoggedIn" ><a href="" (click)="logout()">Déconnecter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
